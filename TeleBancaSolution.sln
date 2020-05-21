@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Telebanca", "Telebanca\", "{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/Telebanca"
+		Debug.AspNetCompiler.PhysicalPath = "Telebanca\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Telebanca\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Telebanca"
+		Release.AspNetCompiler.PhysicalPath = "Telebanca\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Telebanca\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "42456"
+		SlnRelativePath = "Telebanca\"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A} = {7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BusinessLayer", "BusinessLayer\", "{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{9b0ef6fb-5872-41c5-9484-a89650311b2c}|DataAccessLayer.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/BusinessLayer"
+		Debug.AspNetCompiler.PhysicalPath = "BusinessLayer\"
+		Debug.AspNetCompiler.TargetPath = "..\..\..\inetpub\wwwroot\BusinessLayer\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/BusinessLayer"
+		Release.AspNetCompiler.PhysicalPath = "BusinessLayer\"
+		Release.AspNetCompiler.TargetPath = "..\..\..\inetpub\wwwroot\BusinessLayer\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "42458"
+		SlnRelativePath = "BusinessLayer\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "C:\inetpub\DataAccessLayer\DataAccessLayer.csproj", "{9B0EF6FB-5872-41C5-9484-A89650311B2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Release|.NET.ActiveCfg = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{309B3E8A-F51B-46CD-AAC5-1DF765B04A96}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Release|.NET.ActiveCfg = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7F64968F-A90D-4C00-BF5E-B838AFA0BF6A}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Release|.NET.ActiveCfg = Release|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9B0EF6FB-5872-41C5-9484-A89650311B2C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

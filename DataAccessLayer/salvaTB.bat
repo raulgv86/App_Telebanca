@@ -1,0 +1,1 @@
+copy c:\Backup\*.bak /Y \\snap-sibanc\telebanca\BackupTelebanca

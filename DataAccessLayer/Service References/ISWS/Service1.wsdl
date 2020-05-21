@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.31.26.12/IdentityService/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.31.26.12/IdentityService/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.31.26.12/IdentityService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IdentityService" />
+      <xsd:import schemaLocation="http://172.31.26.12/IdentityService/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_ExisteAplicacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteAplicacion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExisteAplicacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteAplicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistraAplicacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraAplicacion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegistraAplicacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraAplicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExistePersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistePersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExistePersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistePersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreaPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreaPersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreaPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreaPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaPersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TB_BuscarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:TB_BuscarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TB_BuscarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TB_BuscarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CambiaPINTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiaPINTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CambiaPINTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiaPINTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CrearTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CrearTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActivarAplicacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarAplicacion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActivarAplicacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarAplicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReasignarMatriz_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReasignarMatriz" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReasignarMatriz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReasignarMatrizResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReasignarTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReasignarTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReasignarTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReasignarTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaPINTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaPINTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaPINTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaPINTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaPosicPINTarjeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaPosicPINTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaPosicPINTarjeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaPosicPINTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaRespuesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidaRespuesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaRespuestaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="ExisteAplicacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExisteAplicacion" message="tns:IService1_ExisteAplicacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExisteAplicacionResponse" message="tns:IService1_ExisteAplicacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraAplicacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegistraAplicacion" message="tns:IService1_RegistraAplicacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegistraAplicacionResponse" message="tns:IService1_RegistraAplicacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistePersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExistePersona" message="tns:IService1_ExistePersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExistePersonaResponse" message="tns:IService1_ExistePersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreaPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreaPersona" message="tns:IService1_CreaPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreaPersonaResponse" message="tns:IService1_CreaPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidaPersona" message="tns:IService1_ValidaPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ValidaPersonaResponse" message="tns:IService1_ValidaPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BuscarPersona" message="tns:IService1_BuscarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BuscarPersonaResponse" message="tns:IService1_BuscarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TB_BuscarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TB_BuscarPersona" message="tns:IService1_TB_BuscarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TB_BuscarPersonaResponse" message="tns:IService1_TB_BuscarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiaPINTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CambiaPINTarjeta" message="tns:IService1_CambiaPINTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CambiaPINTarjetaResponse" message="tns:IService1_CambiaPINTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CrearTarjeta" message="tns:IService1_CrearTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CrearTarjetaResponse" message="tns:IService1_CrearTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarAplicacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActivarAplicacion" message="tns:IService1_ActivarAplicacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActivarAplicacionResponse" message="tns:IService1_ActivarAplicacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReasignarMatriz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReasignarMatriz" message="tns:IService1_ReasignarMatriz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReasignarMatrizResponse" message="tns:IService1_ReasignarMatriz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReasignarTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReasignarTarjeta" message="tns:IService1_ReasignarTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReasignarTarjetaResponse" message="tns:IService1_ReasignarTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaPINTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidaPINTarjeta" message="tns:IService1_ValidaPINTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ValidaPINTarjetaResponse" message="tns:IService1_ValidaPINTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaPosicPINTarjeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidaPosicPINTarjeta" message="tns:IService1_ValidaPosicPINTarjeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ValidaPosicPINTarjetaResponse" message="tns:IService1_ValidaPosicPINTarjeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRespuesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidaRespuesta" message="tns:IService1_ValidaRespuesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ValidaRespuestaResponse" message="tns:IService1_ValidaRespuesta_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExisteAplicacion">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExisteAplicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraAplicacion">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegistraAplicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistePersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExistePersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreaPersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreaPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaPersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/ValidaPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/BuscarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TB_BuscarPersona">
+      <soap:operation soapAction="http://tempuri.org/IService1/TB_BuscarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiaPINTarjeta">
+      <soap:operation soapAction="http://tempuri.org/IService1/CambiaPINTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarjeta">
+      <soap:operation soapAction="http://tempuri.org/IService1/CrearTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarAplicacion">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActivarAplicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReasignarMatriz">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReasignarMatriz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReasignarTarjeta">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReasignarTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaPINTarjeta">
+      <soap:operation soapAction="http://tempuri.org/IService1/ValidaPINTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaPosicPINTarjeta">
+      <soap:operation soapAction="http://tempuri.org/IService1/ValidaPosicPINTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRespuesta">
+      <soap:operation soapAction="http://tempuri.org/IService1/ValidaRespuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://172.31.26.12/IdentityService/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

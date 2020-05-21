@@ -1,0 +1,113 @@
+﻿<!--
+
+Quotation Scroller v1.0 by Angus Turnbull  http://gusnz.cjb.net  Updated: 15 Feb 2001
+Secondary Redirect: http://www.bigfoot.com/~angus_rt
+
+-->
+
+<html>
+<body bgcolor="#ffffff" scroll="no">
+
+    <script>
+    <!-- // Hide
+
+    var isDOM = false, isNS4 = false;
+    if (document.all) var isDOM = true, docObj = 'document.all.', styObj = '.style';
+    else if (document.layers) var isNS4 = true, docObj = 'document.', styObj = '';
+
+    var quotes = new Array(); c = 0;
+    quotes[c] = '...Pagos de Servicios...'; c++;
+    quotes[c] = '...Banca Telefónica'; c++;
+    quotes[c] = '...Factura de Electricidad...'; c++;
+    quotes[c] = '...Factura Teléfonica...'; c++;
+    quotes[c] = '...Pago de Reservas de Vuelos de AeroCaribbean...'; c++;
+    quotes[c] = '...Factura de Agua...'; c++;
+    quotes[c] = '...Tributos de la ONAT...'; c++;
+    quotes[c] = '...Multas de Tránsito...'; c++;
+    quotes[c] = '...7 años ya con nuestros Clientes...'; c++;
+    quotes[c] = '...Multas por Contravención....'; c++; 
+    quotes[c] = '...Pagos y Transferencias aplicando Tipo de Cambio....'; c++;    
+    quotes[c] = '...Transferencias al Propio Cliente...'; c++;
+    quotes[c] = '...Transferencias a Terceros entre Tarjetas Magnéticas y/o Cuentas Estandarizadas(Incluye Libretas de Ahorro)...'; c++;
+    quotes[c] = '...Centro de Llamadas....'; c++;
+    quotes[c] = '...Tasas de Cambios de Monedas Extranjeras...'; c++;
+    quotes[c] = '...Atención Personalizada o Automática...'; c++;
+    
+    
+    
+    
+    
+    
+
+    var visQuotes = 7; // Maximum onscreen at once.
+
+    var sDivSty = new Array(visQuotes);
+    var sDivRef = new Array(visQuotes);
+    var speed = new Array(visQuotes);
+
+    //  Left: Low speed colours (lighter) .... Right: High speed colours (darker).
+    var colours = new Array('88A8CC','88A8CC','88A8CC','88A8CC','7A9EC6','6C94C0','5E89BA');
+
+
+    function checkDivs()
+    {
+     for (i = 0; i < visQuotes; i++)
+     {
+      // If it's moved offscreen to the left (or starting), set things in motion...
+      if (parseInt(sDivSty[i].left) < (0 - (isDOM ? sDivRef[i].clientWidth : sDivSty[i].clip.width)))
+      {
+       speed[i] = Math.floor(Math.random() * 56) + 8; // Varies: 8 to 63.
+       // Off to the right it goes.
+       sDivSty[i].left = (isDOM ? document.body.clientWidth : window.innerWidth) + Math.random() * 50;
+       // Write a quote in a colour that depends on the speed.
+
+    /*  Stylesheets - guess which browser has bugs :)
+     *
+     *  divText = '<nobr><span style="font: ' + speed[i] + 'px Arial, Helvetica; ' +
+     *   'color: #' + colours[Math.floor(speed[i] / 8) - 1] + '">' +
+     *   quotes[Math.floor(Math.random() * quotes.length)] + '</span></nobr>';
+     */
+
+       fontSize = Math.floor(speed[i] / 8) - 1;
+       divText = '<nobr><font face="Franklin Gothic Book, Helvetica" size="' + fontSize + '" color="#00cc00">' + quotes[Math.floor(Math.random() * quotes.length)] +
+        '</font></nobr>';
+
+       if (isDOM) sDivRef[i].innerHTML = divText;
+       if (isNS4)
+       {
+        sDivRef[i].document.write(divText);
+        sDivRef[i].document.close();
+       }
+       // Position and layer it according to its speed (faster = higher).
+       sDivSty[i].zIndex = speed[i];
+       topMax = (isDOM ? document.body.clientHeight : innerHeight) - speed[i];
+       sDivSty[i].top = topMax * Math.random();
+      }
+      // All items: Keep 'em moving left.
+      sDivSty[i].left = parseInt(sDivSty[i].left) - (speed[i] / 4);
+     }
+    }
+
+
+    function initDivs()
+    {
+     for (i = 0; i < visQuotes; i++)
+     {
+      divID = 'sDiv' + i.toString();
+      if (isDOM) document.write('<div id="' + divID + '" style="position: absolute; left: -1000">&nbsp;</div>');
+      // Have to use layers, divs are buggy as..... in NS. Again.
+      if (isNS4) document.write('<layer id="' + divID + '" left="-1000">&nbsp;</layer>');
+      sDivRef[i] = eval(docObj + 'sDiv' + i);
+      sDivSty[i] = eval(docObj + 'sDiv' + i + styObj);
+     }
+
+     setInterval('checkDivs()', 50);
+    }
+
+    if (isDOM || isNS4) initDivs();
+
+    // End Hide -->
+    </script>
+    
+</body>
+</html>

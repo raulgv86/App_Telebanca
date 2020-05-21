@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.31.26.12/IdentityService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IdentityService" />
+  <xs:import schemaLocation="http://172.31.26.12/IdentityService/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ExisteAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExisteAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExisteAplicacionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistraAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="URLAct" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistraAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistraAplicacionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExistePersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="d" nillable="true" type="q1:DatosBusquedaPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExistePersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExistePersonaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="d" nillable="true" type="q2:DatosPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreaPersonaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="d" nillable="true" type="q3:DatosBusquedaPersona" />
+        <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="ValidaPersonaResult" nillable="true" type="q4:VData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="BuscarPersonaResult" nillable="true" type="q5:DatosPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TB_BuscarPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TB_BuscarPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="TB_BuscarPersonaResult" nillable="true" type="q6:TB_Data" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiaPINTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PINViejo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PINNuevo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiaPINTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="d" nillable="true" type="q7:DatosPersona" />
+        <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearTarjetaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivarAplicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivarAplicacionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReasignarMatriz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="d" nillable="true" type="q8:DatosBusquedaPersona" />
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReasignarMatrizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReasignarMatrizResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReasignarTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/IdentityService" minOccurs="0" name="d" nillable="true" type="q9:DatosBusquedaPersona" />
+        <xs:element minOccurs="0" name="TarjetaId_Vieja" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReasignarTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReasignarTarjetaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaPINTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usrPIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaPINTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidaPINTarjetaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaPosicPINTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PINPos" nillable="true" type="q10:ArrayOfint" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PINDigit" nillable="true" type="q11:ArrayOfchar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaPosicPINTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidaPosicPINTarjetaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaRespuesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TarjetaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fila" type="xs:int" />
+        <xs:element minOccurs="0" name="col" type="xs:int" />
+        <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaRespuestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidaRespuestaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

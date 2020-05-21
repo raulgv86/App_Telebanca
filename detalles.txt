@@ -1,0 +1,14 @@
+en esta version se quiere agregar la funcionalidad de modificar los datos del cliente, para que actualice en telebanca e IDP y BancaMovil.
+
+Pin Digital: Nueva funcionalidad para solicitud de pin digital (tarj magnetica). Genera 2 coordenadas, se descifran sus valores
+	     y se genera el proceso que genera un PinBlock(usando algoritmo) y se guarda en SABIC: M_PANACTTMP
+
+
+--=================================================================--
+Modificaciones de la aplicacion con lo del USD:
+
+Transferencia(Tarjeta Magnetica, Cuenta Estandarizada): Se agrego la moneda a seleccionar para transferir USD
+	      En la ventana donde Selecciona la Moneda y Aplica Tipo Cambio, muestra la informacion de la aplicacin del cambio en ese momento antes de pagar
+
+
+

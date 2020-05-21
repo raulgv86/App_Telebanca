@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<script type="text/javascript">
+<!--
+function dia()
+{
+ var mydate = new Date()
+                        var year = mydate.getYear()
+                        if (year < 1000)
+                            year += 1900
+                        var day = mydate.getDay()
+                        var month = mydate.getMonth()
+                        var daym = mydate.getDate()
+                        if (daym == 1)
+                            daym = daym + "ro" 
+                        var dayarray = new Array("Domingo", "Lunes", "Martes", "Mi\xE9rcoles", "Jueves", "Viernes", "S\xE1bado")
+                        var montharray = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+                        document.write("<small><b><font color='Black' face='Calibri'size='2'>" + "Hoy es "+ dayarray[day] + " " + daym + " de " + montharray[month] + " de " + year + "</font></b></small>")
+}
+</script>
+<body onload="dia()">
+
+</body>
+</html>

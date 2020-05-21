@@ -1,0 +1,1843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSTBanca" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="WSTBanca" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WSTBanca">
+      <s:element name="Autenticar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiciosxTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiciosxTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiciosxTarjetaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarClasificadores">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarClasificadoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarClasificadoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSaldo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSaldoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaSaldoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSaldoIVR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_tarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipmoneda" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSaldoIVRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsultaSaldoIVRResult" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="saldo" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSaldoCuentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSaldoCuentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaSaldoCuentasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TarjetasAImprimir">
+        <s:complexType />
+      </s:element>
+      <s:element name="TarjetasAImprimirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetasAImprimirResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TarjetasCanceladas">
+        <s:complexType />
+      </s:element>
+      <s:element name="TarjetasCanceladasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetasCanceladasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReporteTarjetas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReporteTarjetasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReporteTarjetasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaContrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contratos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="operbt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaContratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaContratoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarImpresion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjetas" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarImpresionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarImpresionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarCanceladas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjetas" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarCanceladasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarCanceladasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarReimpresion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjetas" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarReimpresionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarReimpresionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarCreadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjetas" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarCreadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarCreadasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivaTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivaTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActivaTarjetaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pagar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="esdivisa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="concec" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechahora" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="horareal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaBT" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="horaBT" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PagarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PagarResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transferencias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="esdivisa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="tns:ArrayOfArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="concec" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechahora" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="horareal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaBT" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="horaBT" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransferenciasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultasT2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="multas">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultasT2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MultasT2Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarTransacciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transacciones">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarTransaccionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarTransaccionesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarTransaccionesAut">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConfirmarTransaccionesAutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmarTransaccionesAutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarSucursales">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarSucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarSucursalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformarReclamaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reclamaciones">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformarReclamacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InformarReclamacionesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProvincias">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProvinciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProvinciasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMunicipios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="provin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMunicipiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMunicipiosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMuniSucursales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="muni" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMuniSucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMuniSucursalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoCambio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoCambioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoCambioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Calculo_TipoCambio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Calculo_TipoCambioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Calculo_TipoCambioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreDelTitular">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_cuenta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_cuenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreDelTitularResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombreDelTitularResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSucursalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuentasCred">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num_ideper" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuentasCredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCuentasCredResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatosDeuda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cta_estandarizada" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cant_mes_amor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatosDeudaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDatosDeudaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AmortizarDeuda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="esdivisa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="concec" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaBT" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="imp_mensual" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="imp_recargo" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="cta_estandarizada" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AmortizarDeudaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AmortizarDeudaResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ultimos_Movimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="moneda" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ultimos_MovimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ultimos_MovimientosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatosCliente_MTARJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatosCliente_MTARJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDatosCliente_MTARJResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTarjetasMagneticas_Cliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num_ideper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cod_tipid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cod_pais" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTarjetasMagneticas_ClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTarjetasMagneticas_ClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatosPan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num_pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_telebanca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_ideper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cod_tipid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cod_pais" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatosPanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDatosPanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveInfoPAN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num_pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_ideper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cod_hash" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveInfoPANResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveInfoPANResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje_error" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_error" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Importe_Debito_USD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mon_origen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mon_destino" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha_bt" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="import_cr" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Importe_Debito_USDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Importe_Debito_USDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AutenticarSoapIn">
+    <wsdl:part name="parameters" element="tns:Autenticar" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiciosxTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiciosxTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ServiciosxTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiciosxTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClasificadoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarClasificadores" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClasificadoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarClasificadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldoIVRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldoIVR" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldoIVRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldoIVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldoCuentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldoCuentas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSaldoCuentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaSaldoCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasAImprimirSoapIn">
+    <wsdl:part name="parameters" element="tns:TarjetasAImprimir" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasAImprimirSoapOut">
+    <wsdl:part name="parameters" element="tns:TarjetasAImprimirResponse" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasCanceladasSoapIn">
+    <wsdl:part name="parameters" element="tns:TarjetasCanceladas" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasCanceladasSoapOut">
+    <wsdl:part name="parameters" element="tns:TarjetasCanceladasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReporteTarjetasSoapIn">
+    <wsdl:part name="parameters" element="tns:ReporteTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="ReporteTarjetasSoapOut">
+    <wsdl:part name="parameters" element="tns:ReporteTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaContratoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaContrato" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaContratoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarImpresionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarImpresion" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarImpresionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarImpresionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarCanceladasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarCanceladas" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarCanceladasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarCanceladasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarReimpresionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarReimpresion" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarReimpresionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarReimpresionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarCreadasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarCreadas" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarCreadasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarCreadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivaTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivaTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagarSoapIn">
+    <wsdl:part name="parameters" element="tns:Pagar" />
+  </wsdl:message>
+  <wsdl:message name="PagarSoapOut">
+    <wsdl:part name="parameters" element="tns:PagarResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferenciasSoapIn">
+    <wsdl:part name="parameters" element="tns:Transferencias" />
+  </wsdl:message>
+  <wsdl:message name="TransferenciasSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MultasT2SoapIn">
+    <wsdl:part name="parameters" element="tns:MultasT2" />
+  </wsdl:message>
+  <wsdl:message name="MultasT2SoapOut">
+    <wsdl:part name="parameters" element="tns:MultasT2Response" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarTransaccionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarTransacciones" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarTransaccionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarTransaccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarTransaccionesAutSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarTransaccionesAut" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarTransaccionesAutSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarTransaccionesAutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarSucursales" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarSucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformarReclamacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:InformarReclamaciones" />
+  </wsdl:message>
+  <wsdl:message name="InformarReclamacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:InformarReclamacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProvinciasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProvincias" />
+  </wsdl:message>
+  <wsdl:message name="GetProvinciasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProvinciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMunicipiosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMunicipios" />
+  </wsdl:message>
+  <wsdl:message name="GetMunicipiosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMunicipiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMuniSucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMuniSucursales" />
+  </wsdl:message>
+  <wsdl:message name="GetMuniSucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMuniSucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoCambioSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="TipoCambioSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="Calculo_TipoCambioSoapIn">
+    <wsdl:part name="parameters" element="tns:Calculo_TipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="Calculo_TipoCambioSoapOut">
+    <wsdl:part name="parameters" element="tns:Calculo_TipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="NombreDelTitularSoapIn">
+    <wsdl:part name="parameters" element="tns:NombreDelTitular" />
+  </wsdl:message>
+  <wsdl:message name="NombreDelTitularSoapOut">
+    <wsdl:part name="parameters" element="tns:NombreDelTitularResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSucursal" />
+  </wsdl:message>
+  <wsdl:message name="GetSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentasCredSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCuentasCred" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentasCredSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCuentasCredResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatosDeudaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatosDeuda" />
+  </wsdl:message>
+  <wsdl:message name="GetDatosDeudaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatosDeudaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AmortizarDeudaSoapIn">
+    <wsdl:part name="parameters" element="tns:AmortizarDeuda" />
+  </wsdl:message>
+  <wsdl:message name="AmortizarDeudaSoapOut">
+    <wsdl:part name="parameters" element="tns:AmortizarDeudaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ultimos_MovimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:Ultimos_Movimientos" />
+  </wsdl:message>
+  <wsdl:message name="Ultimos_MovimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:Ultimos_MovimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatosCliente_MTARJSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatosCliente_MTARJ" />
+  </wsdl:message>
+  <wsdl:message name="GetDatosCliente_MTARJSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatosCliente_MTARJResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTarjetasMagneticas_ClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTarjetasMagneticas_Cliente" />
+  </wsdl:message>
+  <wsdl:message name="GetTarjetasMagneticas_ClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTarjetasMagneticas_ClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatosPanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatosPan" />
+  </wsdl:message>
+  <wsdl:message name="GetDatosPanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatosPanResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveInfoPANSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveInfoPAN" />
+  </wsdl:message>
+  <wsdl:message name="SaveInfoPANSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveInfoPANResponse" />
+  </wsdl:message>
+  <wsdl:message name="Importe_Debito_USDSoapIn">
+    <wsdl:part name="parameters" element="tns:Importe_Debito_USD" />
+  </wsdl:message>
+  <wsdl:message name="Importe_Debito_USDSoapOut">
+    <wsdl:part name="parameters" element="tns:Importe_Debito_USDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Autenticar">
+      <wsdl:input message="tns:AutenticarSoapIn" />
+      <wsdl:output message="tns:AutenticarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiciosxTarjeta">
+      <wsdl:input message="tns:ServiciosxTarjetaSoapIn" />
+      <wsdl:output message="tns:ServiciosxTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarClasificadores">
+      <wsdl:input message="tns:ActualizarClasificadoresSoapIn" />
+      <wsdl:output message="tns:ActualizarClasificadoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldo">
+      <wsdl:input message="tns:ConsultaSaldoSoapIn" />
+      <wsdl:output message="tns:ConsultaSaldoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldoIVR">
+      <wsdl:input message="tns:ConsultaSaldoIVRSoapIn" />
+      <wsdl:output message="tns:ConsultaSaldoIVRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldoCuentas">
+      <wsdl:input message="tns:ConsultaSaldoCuentasSoapIn" />
+      <wsdl:output message="tns:ConsultaSaldoCuentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasAImprimir">
+      <wsdl:input message="tns:TarjetasAImprimirSoapIn" />
+      <wsdl:output message="tns:TarjetasAImprimirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasCanceladas">
+      <wsdl:input message="tns:TarjetasCanceladasSoapIn" />
+      <wsdl:output message="tns:TarjetasCanceladasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReporteTarjetas">
+      <wsdl:input message="tns:ReporteTarjetasSoapIn" />
+      <wsdl:output message="tns:ReporteTarjetasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaContrato">
+      <wsdl:input message="tns:ActualizaContratoSoapIn" />
+      <wsdl:output message="tns:ActualizaContratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarImpresion">
+      <wsdl:input message="tns:ConfirmarImpresionSoapIn" />
+      <wsdl:output message="tns:ConfirmarImpresionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarCanceladas">
+      <wsdl:input message="tns:ConfirmarCanceladasSoapIn" />
+      <wsdl:output message="tns:ConfirmarCanceladasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarReimpresion">
+      <wsdl:input message="tns:ConfirmarReimpresionSoapIn" />
+      <wsdl:output message="tns:ConfirmarReimpresionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarCreadas">
+      <wsdl:input message="tns:ConfirmarCreadasSoapIn" />
+      <wsdl:output message="tns:ConfirmarCreadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjeta">
+      <wsdl:input message="tns:ActivaTarjetaSoapIn" />
+      <wsdl:output message="tns:ActivaTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <wsdl:input message="tns:PagarSoapIn" />
+      <wsdl:output message="tns:PagarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transferencias">
+      <wsdl:input message="tns:TransferenciasSoapIn" />
+      <wsdl:output message="tns:TransferenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MultasT2">
+      <wsdl:input message="tns:MultasT2SoapIn" />
+      <wsdl:output message="tns:MultasT2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarTransacciones">
+      <wsdl:input message="tns:ConfirmarTransaccionesSoapIn" />
+      <wsdl:output message="tns:ConfirmarTransaccionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarTransaccionesAut">
+      <wsdl:input message="tns:ConfirmarTransaccionesAutSoapIn" />
+      <wsdl:output message="tns:ConfirmarTransaccionesAutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSucursales">
+      <wsdl:input message="tns:ActualizarSucursalesSoapIn" />
+      <wsdl:output message="tns:ActualizarSucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformarReclamaciones">
+      <wsdl:input message="tns:InformarReclamacionesSoapIn" />
+      <wsdl:output message="tns:InformarReclamacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincias">
+      <wsdl:input message="tns:GetProvinciasSoapIn" />
+      <wsdl:output message="tns:GetProvinciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMunicipios">
+      <wsdl:input message="tns:GetMunicipiosSoapIn" />
+      <wsdl:output message="tns:GetMunicipiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMuniSucursales">
+      <wsdl:input message="tns:GetMuniSucursalesSoapIn" />
+      <wsdl:output message="tns:GetMuniSucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoCambio">
+      <wsdl:input message="tns:TipoCambioSoapIn" />
+      <wsdl:output message="tns:TipoCambioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Calculo_TipoCambio">
+      <wsdl:input message="tns:Calculo_TipoCambioSoapIn" />
+      <wsdl:output message="tns:Calculo_TipoCambioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NombreDelTitular">
+      <wsdl:input message="tns:NombreDelTitularSoapIn" />
+      <wsdl:output message="tns:NombreDelTitularSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSucursal">
+      <wsdl:input message="tns:GetSucursalSoapIn" />
+      <wsdl:output message="tns:GetSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentasCred">
+      <wsdl:input message="tns:GetCuentasCredSoapIn" />
+      <wsdl:output message="tns:GetCuentasCredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosDeuda">
+      <wsdl:input message="tns:GetDatosDeudaSoapIn" />
+      <wsdl:output message="tns:GetDatosDeudaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AmortizarDeuda">
+      <wsdl:input message="tns:AmortizarDeudaSoapIn" />
+      <wsdl:output message="tns:AmortizarDeudaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ultimos_Movimientos">
+      <wsdl:input message="tns:Ultimos_MovimientosSoapIn" />
+      <wsdl:output message="tns:Ultimos_MovimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosCliente_MTARJ">
+      <wsdl:input message="tns:GetDatosCliente_MTARJSoapIn" />
+      <wsdl:output message="tns:GetDatosCliente_MTARJSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTarjetasMagneticas_Cliente">
+      <wsdl:input message="tns:GetTarjetasMagneticas_ClienteSoapIn" />
+      <wsdl:output message="tns:GetTarjetasMagneticas_ClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosPan">
+      <wsdl:input message="tns:GetDatosPanSoapIn" />
+      <wsdl:output message="tns:GetDatosPanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveInfoPAN">
+      <wsdl:input message="tns:SaveInfoPANSoapIn" />
+      <wsdl:output message="tns:SaveInfoPANSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Importe_Debito_USD">
+      <wsdl:input message="tns:Importe_Debito_USDSoapIn" />
+      <wsdl:output message="tns:Importe_Debito_USDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Autenticar">
+      <soap:operation soapAction="WSTBanca/Autenticar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiciosxTarjeta">
+      <soap:operation soapAction="WSTBanca/ServiciosxTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarClasificadores">
+      <soap:operation soapAction="WSTBanca/ActualizarClasificadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldo">
+      <soap:operation soapAction="WSTBanca/ConsultaSaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldoIVR">
+      <soap:operation soapAction="WSTBanca/ConsultaSaldoIVR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldoCuentas">
+      <soap:operation soapAction="WSTBanca/ConsultaSaldoCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasAImprimir">
+      <soap:operation soapAction="WSTBanca/TarjetasAImprimir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasCanceladas">
+      <soap:operation soapAction="WSTBanca/TarjetasCanceladas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteTarjetas">
+      <soap:operation soapAction="WSTBanca/ReporteTarjetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaContrato">
+      <soap:operation soapAction="WSTBanca/ActualizaContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarImpresion">
+      <soap:operation soapAction="WSTBanca/ConfirmarImpresion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarCanceladas">
+      <soap:operation soapAction="WSTBanca/ConfirmarCanceladas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarReimpresion">
+      <soap:operation soapAction="WSTBanca/ConfirmarReimpresion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarCreadas">
+      <soap:operation soapAction="WSTBanca/ConfirmarCreadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjeta">
+      <soap:operation soapAction="WSTBanca/ActivaTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <soap:operation soapAction="WSTBanca/Pagar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transferencias">
+      <soap:operation soapAction="WSTBanca/Transferencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultasT2">
+      <soap:operation soapAction="WSTBanca/MultasT2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarTransacciones">
+      <soap:operation soapAction="WSTBanca/ConfirmarTransacciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarTransaccionesAut">
+      <soap:operation soapAction="WSTBanca/ConfirmarTransaccionesAut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSucursales">
+      <soap:operation soapAction="WSTBanca/ActualizarSucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarReclamaciones">
+      <soap:operation soapAction="WSTBanca/InformarReclamaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincias">
+      <soap:operation soapAction="WSTBanca/GetProvincias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMunicipios">
+      <soap:operation soapAction="WSTBanca/GetMunicipios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMuniSucursales">
+      <soap:operation soapAction="WSTBanca/GetMuniSucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoCambio">
+      <soap:operation soapAction="WSTBanca/TipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Calculo_TipoCambio">
+      <soap:operation soapAction="WSTBanca/Calculo_TipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreDelTitular">
+      <soap:operation soapAction="WSTBanca/NombreDelTitular" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSucursal">
+      <soap:operation soapAction="WSTBanca/GetSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentasCred">
+      <soap:operation soapAction="WSTBanca/GetCuentasCred" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosDeuda">
+      <soap:operation soapAction="WSTBanca/GetDatosDeuda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmortizarDeuda">
+      <soap:operation soapAction="WSTBanca/AmortizarDeuda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ultimos_Movimientos">
+      <soap:operation soapAction="WSTBanca/Ultimos_Movimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosCliente_MTARJ">
+      <soap:operation soapAction="WSTBanca/GetDatosCliente_MTARJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTarjetasMagneticas_Cliente">
+      <soap:operation soapAction="WSTBanca/GetTarjetasMagneticas_Cliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosPan">
+      <soap:operation soapAction="WSTBanca/GetDatosPan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInfoPAN">
+      <soap:operation soapAction="WSTBanca/SaveInfoPAN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Importe_Debito_USD">
+      <soap:operation soapAction="WSTBanca/Importe_Debito_USD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Autenticar">
+      <soap12:operation soapAction="WSTBanca/Autenticar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiciosxTarjeta">
+      <soap12:operation soapAction="WSTBanca/ServiciosxTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarClasificadores">
+      <soap12:operation soapAction="WSTBanca/ActualizarClasificadores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldo">
+      <soap12:operation soapAction="WSTBanca/ConsultaSaldo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldoIVR">
+      <soap12:operation soapAction="WSTBanca/ConsultaSaldoIVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSaldoCuentas">
+      <soap12:operation soapAction="WSTBanca/ConsultaSaldoCuentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasAImprimir">
+      <soap12:operation soapAction="WSTBanca/TarjetasAImprimir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasCanceladas">
+      <soap12:operation soapAction="WSTBanca/TarjetasCanceladas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReporteTarjetas">
+      <soap12:operation soapAction="WSTBanca/ReporteTarjetas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaContrato">
+      <soap12:operation soapAction="WSTBanca/ActualizaContrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarImpresion">
+      <soap12:operation soapAction="WSTBanca/ConfirmarImpresion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarCanceladas">
+      <soap12:operation soapAction="WSTBanca/ConfirmarCanceladas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarReimpresion">
+      <soap12:operation soapAction="WSTBanca/ConfirmarReimpresion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarCreadas">
+      <soap12:operation soapAction="WSTBanca/ConfirmarCreadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjeta">
+      <soap12:operation soapAction="WSTBanca/ActivaTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <soap12:operation soapAction="WSTBanca/Pagar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transferencias">
+      <soap12:operation soapAction="WSTBanca/Transferencias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultasT2">
+      <soap12:operation soapAction="WSTBanca/MultasT2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarTransacciones">
+      <soap12:operation soapAction="WSTBanca/ConfirmarTransacciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarTransaccionesAut">
+      <soap12:operation soapAction="WSTBanca/ConfirmarTransaccionesAut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSucursales">
+      <soap12:operation soapAction="WSTBanca/ActualizarSucursales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarReclamaciones">
+      <soap12:operation soapAction="WSTBanca/InformarReclamaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincias">
+      <soap12:operation soapAction="WSTBanca/GetProvincias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMunicipios">
+      <soap12:operation soapAction="WSTBanca/GetMunicipios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMuniSucursales">
+      <soap12:operation soapAction="WSTBanca/GetMuniSucursales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoCambio">
+      <soap12:operation soapAction="WSTBanca/TipoCambio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Calculo_TipoCambio">
+      <soap12:operation soapAction="WSTBanca/Calculo_TipoCambio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreDelTitular">
+      <soap12:operation soapAction="WSTBanca/NombreDelTitular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSucursal">
+      <soap12:operation soapAction="WSTBanca/GetSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentasCred">
+      <soap12:operation soapAction="WSTBanca/GetCuentasCred" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosDeuda">
+      <soap12:operation soapAction="WSTBanca/GetDatosDeuda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmortizarDeuda">
+      <soap12:operation soapAction="WSTBanca/AmortizarDeuda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ultimos_Movimientos">
+      <soap12:operation soapAction="WSTBanca/Ultimos_Movimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosCliente_MTARJ">
+      <soap12:operation soapAction="WSTBanca/GetDatosCliente_MTARJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTarjetasMagneticas_Cliente">
+      <soap12:operation soapAction="WSTBanca/GetTarjetasMagneticas_Cliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatosPan">
+      <soap12:operation soapAction="WSTBanca/GetDatosPan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInfoPAN">
+      <soap12:operation soapAction="WSTBanca/SaveInfoPAN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Importe_Debito_USD">
+      <soap12:operation soapAction="WSTBanca/Importe_Debito_USD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://192.168.22.3/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://192.168.22.3/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
